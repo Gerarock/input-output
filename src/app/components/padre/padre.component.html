@@ -1,0 +1,16 @@
+<h3>Este es el Componente Padre con la propiedad recibida desde el Hijo</h3>
+<ul *ngIf="propiedadDesdeHijoCuatro">
+  <li>{{propiedadDesdeHijoUno}}</li>
+  <li>{{propiedadDesdeHijoDos}}</li>
+  <li>{{propiedadDesdeHijoTres}}</li>
+  <li>{{propiedadDesdeHijoCuatro | json}}</li>
+</ul>
+<hr>
+<app-hijo 
+  [propiedad_uno] = "'Valor propiedad uno'"
+  [propiedad_dos] = "nombre"
+  [propiedad_tres] = "data.edad"
+  [propiedad_cuatro] = "data | json"
+  (hacia_el_padre) =  "recibirDatos($event)" 
+  >
+</app-hijo>
